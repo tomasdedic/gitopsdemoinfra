@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: basnicky
+  namespace: gitopsdemoapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: basnicky
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: basnicky
+    spec:
+      containers:
+        - name: poet-source
+          image: ghcr.io/tomasdedic/gitopsdemoapp/basnicky_is_my_passon:sha-5bcd3ba4 
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+      imagePullSecrets:
+        - name: gcr-pull
