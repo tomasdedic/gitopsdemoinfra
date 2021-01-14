@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/instance: microsl
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: microservice
+  name: microsl-microservice
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: microservice
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: microservice
+    spec:
+      containers:
+      - image: crccheck/hello-world:latest
+        imagePullPolicy: IfNotPresent
+        name: microservice
+        ports:
+        - containerPort: 8000
+          name: http
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 2
+            memory: 2000Mi
+          requests:
+            cpu: 500m
+            memory: 500Mi
