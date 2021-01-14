@@ -1,4 +1,3 @@
-# deployment dal upravovany prez CI
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -16,7 +15,7 @@ spec:
     spec:
       containers:
         - name: poet-source
-          image: ghcr.io/tomasdedic/gitopsdemoapp/basnicky_is_my_passon:sha-5bcd3ba4 
+          image: ghcr.io/tomasdedic/gitopsdemoapp/basnicky_is_my_passon:sha-c935b0d5
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
