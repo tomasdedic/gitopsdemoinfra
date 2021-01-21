@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   destination:
-    namespace: gitopsdemofull
+    namespace: app3-redis-stfset
     server: https://kubernetes.default.svc
   project: default
   source:

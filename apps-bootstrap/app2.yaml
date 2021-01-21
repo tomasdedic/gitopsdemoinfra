@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   destination:
-    namespace: gitopsdemofull
+    namespace: app2-rolingwebapp
     server: https://kubernetes.default.svc
   project: default
   source:
