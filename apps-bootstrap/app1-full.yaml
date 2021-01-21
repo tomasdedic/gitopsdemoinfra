@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app1-komplex-deployment
+  namespace: default
+spec:
+  destination:
+    namespace: gitopsdemofull
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    directory:
+      recurse: true
+    path: recovery-app-demo/app1-full
+    repoURL: https://github.com/tomasdedic/gitopsdemoinfra.git
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
