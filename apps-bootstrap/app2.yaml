@@ -15,6 +15,7 @@ spec:
     repoURL: https://github.com/tomasdedic/gitopsdemoinfra.git
     targetRevision: HEAD
   syncPolicy:
+    automated: {}
     syncOptions:
     - CreateNamespace=true
 
