@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: poet-source
-          image: ghcr.io/tomasdedic/gitopsdemoapp/basnicky_is_my_passon:sha-db9681bb
+          image: ghcr.io/tomasdedic/gitopsdemoapp/basnicky_is_my_passon:sha-cc748325
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
