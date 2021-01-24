@@ -19,7 +19,7 @@ metadata:
   labels:
     app: hello-web
   name: hello-web
-  namespace: default
+  namespace: app3-redis-stfset
 spec:
   replicas: 3
   selector:
